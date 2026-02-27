@@ -3,95 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rewear Club | Moda Sostenible</title>
+    <title>Rewear Club | Pre-loved Luxury & Sustainable Fashion</title>
     <style>
         :root {
-            --verde-bosque: #2d5a27;
-            --crema: #fdfaf5;
-            --dorado-suave: #c5a059;
-            --texto: #333;
+            --forest: #1b3d2f;
+            --sand: #f4f1ea;
+            --gold: #b08d57;
+            --white: #ffffff;
         }
-        body { font-family: 'Helvetica Neue', sans-serif; margin: 0; background: var(--crema); color: var(--texto); line-height: 1.6; }
-        header { background: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); sticky; top: 0; z-index: 100; }
-        .logo { font-size: 1.5rem; font-weight: bold; color: var(--verde-bosque); letter-spacing: 2px; }
-        nav a { margin-left: 20px; text-decoration: none; color: var(--texto); font-weight: 500; }
+        body { font-family: 'Playfair Display', serif; margin: 0; background-color: var(--sand); color: #222; }
         
-        .hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1300&q=80'); background-size: cover; color: white; }
-        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; }
-        .hero p { font-size: 1.2rem; max-width: 600px; }
+        /* Navegación */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: var(--white); border-bottom: 1px solid #ddd; }
+        .nav-links a { margin-left: 25px; text-decoration: none; color: var(--forest); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
 
-        .section { padding: 80px 10%; text-align: center; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
-        .card { background: white; padding: 30px; border-radius: 10px; border-bottom: 4px solid var(--verde-bosque); transition: 0.3s; }
-        .card:hover { transform: translateY(-10px); }
+        /* Hero */
+        .hero { position: relative; height: 90vh; background: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2070&auto=format&fit=crop') center/cover; display: flex; align-items: center; justify-content: center; color: var(--white); text-align: center; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); }
+        .hero-content { position: relative; z-index: 1; }
+        .hero h1 { font-size: 4rem; margin: 0; letter-spacing: 5px; }
+        .hero p { font-size: 1.2rem; font-style: italic; margin-bottom: 30px; }
+
+        /* Contenedores */
+        .container { max-width: 1100px; margin: auto; padding: 80px 20px; text-align: center; }
+        h2 { font-size: 2.5rem; color: var(--forest); margin-bottom: 40px; }
+
+        /* Secciones de impacto */
+        .manifesto { background: var(--white); padding: 100px 10%; line-height: 1.8; font-size: 1.2rem; border-radius: 5px; }
         
-        h2 { color: var(--verde-bosque); font-size: 2rem; }
-        .cta-btn { background: var(--verde-bosque); color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; display: inline-block; margin-top: 20px; }
+        .grid-images { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-top: 50px; }
+        .grid-item { height: 400px; background-size: cover; background-position: center; border-radius: 3px; }
 
-        footer { background: #1a1a1a; color: white; padding: 40px 10%; text-align: center; font-size: 0.9rem; }
+        /* Botón */
+        .btn { border: 1px solid var(--white); color: var(--white); padding: 15px 40px; text-decoration: none; transition: 0.3s; text-transform: uppercase; letter-spacing: 2px; }
+        .btn:hover { background: var(--white); color: var(--forest); }
+        
+        .btn-dark { border-color: var(--forest); color: var(--forest); }
+        .btn-dark:hover { background: var(--forest); color: white; }
+
+        footer { background: var(--forest); color: var(--sand); padding: 50px; text-align: center; }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <div class="logo">REWEAR CLUB</div>
-        <nav>
-            <a href="#concepto">Concepto</a>
-            <a href="#valores">Valores</a>
-            <a href="#mercado">Mercado</a>
-            <a href="#membresia">Membresía</a>
-        </nav>
+    <nav>
+        <div style="font-size: 1.8rem; font-weight: bold; color: var(--forest);">REWEAR.</div>
+        <div class="nav-links">
+            <a href="#">Catálogo</a>
+            <a href="#">Filosofía</a>
+            <a href="#">Membresía</a>
+            <a href="#">Contacto</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>REWEAR CLUB</h1>
+            <p>La moda no termina, solo cambia de manos.</p>
+            <a href="#about" class="btn">Explorar Colección</a>
+        </div>
     </header>
 
-    <section class="hero">
-        <h1>Moda con Futuro</h1>
-        <p>Prolongamos el ciclo de vida de tus prendas. Economía circular, consumo consciente y estilo único.</p>
-        <a href="#concepto" class="cta-btn">Descubre el Club</a>
-    </section>
+    <div class="container" id="about">
+        <section class="manifesto">
+            <h2>Nuestra Filosofía</h2>
+            <p>En Rewear Club, creemos que el estilo no tiene fecha de caducidad. Nos alejamos de las tendencias efímeras para rescatar prendas de alta calidad que merecen una segunda vida. Somos la alternativa consciente al consumo masivo: curamos, seleccionamos y conectamos moda con historia.</p>
+            
+            
 
-    <section id="concepto" class="section">
-        <h2>Nuestra Idea de Negocio</h2>
-        <p>Rewear Club es una plataforma de compra-venta de ropa de segunda mano curada. Nos alejamos del "fast fashion" para ofrecer calidad y prendas con historia que merecen una segunda oportunidad.</p>
-        
-        <div class="grid">
-            <div class="card">
-                <h3>Curaduría</h3>
-                <p>Seleccionamos cada prenda bajo estrictos criterios de calidad y autenticidad.</p>
-            </div>
-            <div class="card">
-                <h3>Sostenibilidad</h3>
-                <p>Reducimos el impacto ambiental textil fomentando la reutilización real.</p>
-            </div>
-            <div class="card">
-                <h3>Comunidad</h3>
-                <p>Un espacio para personas que valoran la moda ética y el consumo responsable.</p>
+[Image of circular economy cycle]
+
+            
+            <a href="#" class="btn btn-dark" style="margin-top: 30px; display: inline-block;">Únete al Movimiento</a>
+        </section>
+
+        <div class="grid-images">
+            <div class="grid-item" style="background-image: url('https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?q=80&w=1000&auto=format&fit=crop');"></div>
+            <div class="grid-item" style="background-image: url('https://images.unsplash.com/photo-1520006403909-838d6b92c22e?q=80&w=1000&auto=format&fit=crop');"></div>
+            <div class="grid-item" style="background-image: url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=1000&auto=format&fit=crop');"></div>
+        </div>
+    </div>
+
+    <section style="background: #e9e5db; padding: 100px 0;">
+        <div class="container">
+            <h2>Beneficios del Club</h2>
+            <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;">
+                <div style="max-width: 300px;">
+                    <h3 style="color: var(--gold);">Acceso VIP</h3>
+                    <p>Sé el primero en ver nuestras piezas exclusivas de diseñador antes de que salgan a la venta general.</p>
+                </div>
+                <div style="max-width: 300px;">
+                    <h3 style="color: var(--gold);">Intercambio Circular</h3>
+                    <p>Créditos especiales por cada prenda que traigas para que el ciclo nunca se detenga.</p>
+                </div>
+                <div style="max-width: 300px;">
+                    <h3 style="color: var(--gold);">Curaduría Experta</h3>
+                    <p>Cada pieza es verificada, restaurada y autenticada por nuestro equipo de expertos en moda.</p>
+                </div>
             </div>
         </div>
-    </section>
-
-    <section id="valores" class="section" style="background: #f0f4f0;">
-        <h2>Propuesta de Valor</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Transparencia</h3>
-                <p>Trazabilidad total en el proceso de selección y precios justos para vendedor y comprador.</p>
-            </div>
-            <div class="card">
-                <h3>Exclusividad</h3>
-                <p>Acceso a prendas únicas de alta gama y marcas contemporáneas que no pasan de moda.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="membresia" class="section">
-        <h2>Únete al Club</h2>
-        <p>Ofrecemos un programa de membresía con beneficios exclusivos, descuentos y acceso anticipado a nuevas colecciones.</p>
-        <a href="#" class="cta-btn">Saber más</a>
     </section>
 
     <footer>
-        <p>&copy; 2026 Rewear Club. Proyecto de Emprendimiento - FOL.</p>
-        <p>Burgos, España</p>
+        <p>REWEAR CLUB &copy; 2026</p>
+        <p style="font-size: 0.8rem; opacity: 0.7; letter-spacing: 2px;">MODA CONSCIENTE | BURGOS | ESPAÑA</p>
     </footer>
 
 </body>
